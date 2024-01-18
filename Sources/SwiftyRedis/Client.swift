@@ -70,7 +70,7 @@ public class RedisClient {
         if database != 0 {
             try await redis_connection.select(Int(database))
         }
-        if let username = username, let password = password {
+        if let password = password {
             try await redis_connection.auth(username, password)
         }
         return redis_connection
